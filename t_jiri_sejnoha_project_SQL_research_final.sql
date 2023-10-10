@@ -93,6 +93,7 @@
         payroll_year,
         ROUND(AVG(wage_increase), 3) AS overall_wage_increase
     FROM engeto.wage_per_branch_year
+    WHERE payroll_year > 2006
     GROUP BY
         payroll_year
     )
