@@ -1,6 +1,6 @@
 -- Decoding original tables for readability and clarity
     --Payroll data
-        CREATE OR REPLACE TABLE engeto.czechia_payroll_decoded (
+        CREATE OR REPLACE TEMPORARY TABLE engeto.czechia_payroll_decoded (
         SELECT
             id,
             value,
@@ -18,7 +18,7 @@
         )
         
     --Price data
-        CREATE OR REPLACE TABLE engeto.czechia_price_decoded (
+        CREATE OR REPLACE TEMPORARY TABLE engeto.czechia_price_decoded (
         SELECT
             id,
             value,
@@ -36,7 +36,7 @@
 --Adjusting decoded tables for more specificity
     --Wages
         -- Creating value for difference between wages per industry branch per year
-            CREATE OR REPLACE TABLE engeto.mid_result_wage_per_branch_year (
+            CREATE OR REPLACE TEMPORARY TABLE engeto.mid_result_wage_per_branch_year (
             SELECT
                 industry_branch,
                 AVG(value) AS wage,
@@ -52,7 +52,7 @@
             )
 
             -- Listing wages per industry branch per year
-            CREATE OR REPLACE TABLE engeto.wage_per_branch_year (
+            CREATE OR REPLACE TEMPORARY TABLE engeto.wage_per_branch_year (
             SELECT
                 industry_branch,
                 wage,
@@ -62,7 +62,7 @@
             )
     --Prices
         -- Listing numbers of rows to determine first and last recorded years
-            CREATE OR REPLACE TABLE engeto.mid_result_price_per_category_year(
+            CREATE OR REPLACE TEMPORARY TABLE engeto.mid_result_price_per_category_year(
             SELECT
                 category,
                 AVG(value/quantity) AS price_per_unit,
@@ -77,7 +77,7 @@
             )
 
         -- Listing prices per unit per category per year
-            CREATE OR REPLACE TABLE engeto.price_per_category_year(
+            CREATE OR REPLACE TEMPORARY TABLE engeto.price_per_category_year(
             SELECT
                 category,
                 price_per_unit,
