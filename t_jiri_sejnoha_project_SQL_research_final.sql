@@ -1,6 +1,6 @@
 -- Question 1 - Have wages grown in all industry branches over the years, or do some of them decrease?
     -- Assigning uniform value to the wages differential calcutation
-    CREATE OR REPLACE TABLE engeto.q1_decrease_value_unification(
+    CREATE OR REPLACE TEMPORARY TABLE engeto.q1_decrease_value_unification(
     SELECT
         industry_branch,
         payroll_year,
@@ -26,7 +26,7 @@
 -- Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
 -- Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
     --Listing purchasable amount of each produce category per industry branch for corresponding year (using inner join to ensure corresponding years) (including first_year, last_year for filtering)
-    CREATE OR REPLACE TABLE engeto.q2_purchasable_amount_per_branch_category_year(
+    CREATE OR REPLACE TEMPORARY TABLE engeto.q2_purchasable_amount_per_branch_category_year(
     SELECT industry_branch,
         category,
         wage,
@@ -78,7 +78,7 @@
 -- Answer 3 - The slowest increase has been recorded for granulated sugar at average 1.77% decrease.
 -- Question 4 - Has a year, where the price increase was at least 10% higher than wage increase, been recorded?
     -- Creating table for overall price increase per year
-    CREATE OR REPLACE TABLE engeto.q4_overall_price_increase_per_year (
+    CREATE OR REPLACE TEMPORARY TABLE engeto.q4_overall_price_increase_per_year (
     SELECT
         price_year,
         AVG(price_increase) AS overall_price_increase
