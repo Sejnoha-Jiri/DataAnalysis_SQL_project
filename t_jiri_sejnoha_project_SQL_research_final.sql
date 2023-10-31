@@ -27,7 +27,8 @@
 -- Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
     --Listing purchasable amount of each produce category per industry branch for corresponding year (using inner join to ensure corresponding years) (including first_year, last_year for filtering)
     CREATE OR REPLACE TEMPORARY TABLE engeto.q2_purchasable_amount_per_branch_category_year(
-    SELECT industry_branch,
+    SELECT 
+	industry_branch,
         category,
         wage,
         price_per_unit,
@@ -54,7 +55,7 @@
         industry_branch,
         category,
         price_year,
-	    Purchasable_amount,
+	Purchasable_amount,
         unit
     FROM engeto.q2_purchasable_amount_per_branch_category_year qpapbcy
     WHERE (category LIKE '%chléb%' OR category LIKE '%mléko%') AND (first_year=1 OR last_year=1)
@@ -66,7 +67,7 @@
     SELECT
         category,
         unit,
-		AVG(price_increase) AS average_price_increase
+	AVG(price_increase) AS average_price_increase
     FROM engeto.price_per_category_year
     GROUP BY
         category
