@@ -29,8 +29,8 @@
             cp.date_to,
             cr.name AS region
         FROM engeto.czechia_price cp
-        JOIN engeto.czechia_price_category cpc ON cpc.code =cp.category_code
-        JOIN engeto.czechia_region cr ON cr.code =cp.region_code 
+        JOIN engeto.czechia_price_category cpc ON cpc.code = cp.category_code
+        JOIN engeto.czechia_region cr ON cr.code = cp.region_code 
         )
 
 --Adjusting decoded tables for more specificity
