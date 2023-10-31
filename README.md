@@ -11,7 +11,7 @@ File description - t_jiri_sejnoha_project_SQL_primary_final.sql - This script cr
 Questions and answers - Question 1 - Have wages grown in all industry branches over the years, or do some of them decrease?
                           Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
                         Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
-                          Answer 2 - 
+                          Answer 2 - In the first period, 1287kg of bread or 1437l of milk can be bought. In the last period, 1342kf of bread or 1641l of milk can be bought.
                         Question 3 - Which produce category is experiencing the slowest price increase? (Which has the slowest percentage increase per year)
                           Answer 3 - The slowest increase has been recorded for granulated sugar at average 1.77% decrease.
                         Question 4 - Has a year, where the price increase was at least 10% higher than wage increase, been recorded?
