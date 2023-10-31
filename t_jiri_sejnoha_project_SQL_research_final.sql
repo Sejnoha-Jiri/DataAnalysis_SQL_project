@@ -26,13 +26,12 @@
 -- Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
 -- Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
     --Listing purchasable amount of each produce category per industry branch for corresponding year (using inner join to ensure corresponding years) (including first_year, last_year for filtering)
-    CREATE OR REPLACE TEMPORARY TABLE engeto.q2_purchasable_amount_per_branch_category_year(
+    CREATE OR REPLACE TABLE engeto.q2_answer_bread_milk_first_last_year(
     SELECT 
-	industry_branch,
         category,
-        wage,
+        ROUND(AVG(wage), 3),
         price_per_unit,
-        wage/price_per_unit AS Purchasable_amount,
+        ROUND(AVG(wage), 3)/price_per_unit AS Purchasable_amount,
         unit,
         payroll_year,
         price_year,
@@ -40,27 +39,14 @@
         last_year
     FROM engeto.wage_per_branch_year
     JOIN engeto.price_per_category_year ppcy ON payroll_year = ppcy.price_year
+    WHERE (category LIKE '%chléb%' OR category LIKE '%mléko%') AND (first_year=1 OR last_year=1)
     GROUP BY
-        industry_branch,
-        payroll_year,
-        category
+        category,
+        payroll_year
     ORDER BY
-        industry_branch,
         payroll_year
     )
-
-    --Filtering out any records with categories containing milk or bread recorded AS first or last years
-    CREATE OR REPLACE TABLE engeto.q2_answer_bread_milk_first_last_year(
-    SELECT
-        industry_branch,
-        category,
-        price_year,
-	Purchasable_amount,
-        unit
-    FROM engeto.q2_purchasable_amount_per_branch_category_year qpapbcy
-    WHERE (category LIKE '%chléb%' OR category LIKE '%mléko%') AND (first_year=1 OR last_year=1)
-    )
--- Answer 2 - Answer depends ON the industry branch (listed in engeto.q2_answer_average_bread_milk_first_last_year).
+-- Answer 2 - In the first period, 1287kg of bread or 1437l of milk can be bought. In the last period, 1342kf of bread or 1641l of milk can be bought.
 -- Question 3 - Which produce category is experiencing the slowest price increase? (Which has the slowest percentage increase per year)
     --Averaging calculated value and ordering for readability of results
     CREATE OR REPLACE TABLE engeto.q3_answer_average_price_per_category_per_year(
