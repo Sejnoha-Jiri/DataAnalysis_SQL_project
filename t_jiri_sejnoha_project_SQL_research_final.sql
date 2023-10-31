@@ -25,7 +25,7 @@
     )
 -- Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
 -- Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
-    --Listing purchasable amount of each produce category per industry branch for corresponding year (using inner join to ensure corresponding years) (including first_year, last_year for filtering)
+    --Listing purchasable amount of each produce category for corresponding year (using inner join to ensure corresponding years) (including first_year, last_year for filtering)
     CREATE OR REPLACE TABLE engeto.q2_answer_bread_milk_first_last_year(
     SELECT 
         category,
