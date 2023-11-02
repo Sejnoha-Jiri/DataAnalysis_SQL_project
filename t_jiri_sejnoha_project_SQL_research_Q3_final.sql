@@ -11,6 +11,5 @@
     ORDER BY
         average_price_increase
     )
-
-
+    ;
 -- Answer 3 - The slowest increase has been recorded for granulated sugar at average 1.77% decrease.
