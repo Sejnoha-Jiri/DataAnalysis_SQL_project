@@ -12,7 +12,7 @@
     END AS increase_or_decrease
     FROM engeto.wage_per_branch_year
     )
-
+    ;
     -- Listing all branches, counting in how many years the wage decreaseped and listing mentioned years
     CREATE OR REPLACE TABLE engeto.q1_answer_decrease_count_per_branch(
     SELECT
@@ -23,4 +23,5 @@
     GROUP BY
         industry_branch
     )
+    ;
 -- Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
