@@ -7,7 +7,11 @@ Prerequisites - MariaDB - Relational database management system (for of MySQL) (
                                          (Empty DB - open Dbeaver, click "database", "new database connection", "MariaDB", "Next", Set database name to "Engeto", (adjust port if necessary), "Finish"
                                          (Right click "Engeto", "Tools", "restore database", locate the db, "Start")
 File description - t_jiri_sejnoha_project_SQL_primary_final.sql - This script creates table t_jiri_sejnoha_project_SQL_primary_final table that contains all data needed for asnwering all questions below
-                 -  t_jiri_sejnoha_project_SQL_research_final.sql - This script creates individual temporary tables for adjusting the data and tables that contain answers to the individual questions below
+                 -  t_jiri_sejnoha_project_SQL_research_Q1_final.sql - This script creates temporary tables for adjusting the data and a final table that contain answers to question 1 below
+                 -  t_jiri_sejnoha_project_SQL_research_Q2_final.sql - This script creates temporary tables for adjusting the data and a final table that contain answers to question 2 below
+                 -  t_jiri_sejnoha_project_SQL_research_Q3_final.sql - This script creates temporary tables for adjusting the data and a final table that contain answers to question 3 below
+                 -  t_jiri_sejnoha_project_SQL_research_Q4_final.sql - This script creates temporary tables for adjusting the data and a final table that contain answers to question 4 below
+                 -  t_jiri_sejnoha_project_SQL_research_Q5_final.sql - This script creates temporary tables for adjusting the data and a final table that contain answers to question 5 below
 Questions and answers - Question 1 - Have wages grown in all industry branches over the years, or do some of them decrease?
                           Answer 1 - The wage decreased in almost every industry in the recorded years, except "Transportation and Warehousing", "Other Activities", "Healthcare and Social Care" and "Manufacturing Industry".
                         Question 2 - How many liters of milk and kilograms of bread can be bought for the first and last recorded period of available prices and wages
