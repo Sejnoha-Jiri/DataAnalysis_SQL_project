@@ -20,4 +20,5 @@
     ORDER BY
         payroll_year
     )
+    ;
 -- Answer 2 - In the first period, 1287kg of bread or 1437l of milk can be bought. In the last period, 1342kf of bread or 1641l of milk can be bought.
