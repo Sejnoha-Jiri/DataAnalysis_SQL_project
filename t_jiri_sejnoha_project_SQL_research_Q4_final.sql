@@ -8,7 +8,7 @@
     GROUP BY
         price_year 
     )
-
+    ;
     -- Creating table for overall wage increase per year
     CREATE OR REPLACE TABLE engeto.q4_overall_wage_increase_per_year (
     SELECT
@@ -19,7 +19,7 @@
     GROUP BY
         payroll_year
     )
-
+    ;
     -- Comparing the increases and ordering for readablity
     CREATE OR REPLACE TABLE engeto.q4_answer_price_wage_increase_comparison(
     SELECT
@@ -33,5 +33,5 @@
     ORDER BY
         price_wage_absolute_difference DESC
     )
-
+    ;
 -- Answer 4 - There wasn't any year that had 10% difference between the increase of wages and prices, the highest difference occured in year 2009, the difference was 8.49%.
