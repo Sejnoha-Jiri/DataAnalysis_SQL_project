@@ -1,5 +1,6 @@
 # DataAnalysis_SQL_project
 Project for Engeto data analysis course - SQL part
+# Please view this readme file in code view for readability purposes
 
 Prerequisites - MariaDB - Relational database management system (for of MySQL) (Download and install MariaDB from **[here](https://mariadb.org/download/)**.)
               - Dbeaver - SQL client tool (Download and install Dbeaver from MariaDB prompt or **[here](https://dbeaver.io/download/)**.)
